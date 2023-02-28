@@ -1,0 +1,12 @@
+name: Build and push Docker image
+
+on:
+  push: {}
+  pull_request: {}
+
+jobs:
+  docker:
+    uses: webzyno/workflows/.github/workflows/docker.yaml@main
+    with:
+      images: ${{ vars.DOCKER_IMAGES }}
+    secrets: inherit
