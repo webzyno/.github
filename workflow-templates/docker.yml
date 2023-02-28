@@ -9,4 +9,6 @@ jobs:
     uses: webzyno/workflows/.github/workflows/docker.yaml@main
     with:
       images: ${{ vars.DOCKER_IMAGES }}
-    secrets: inherit
+    secrets:
+      username: ${{ secrets.DOCKER_USERNAME }}
+      password: ${{ secrets.DOCKER_PASSWORD }}
